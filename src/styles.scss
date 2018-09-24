@@ -1,1 +1,69 @@
-/* You can add global styles to this file, and also import other style files */
+.u-mb-sm {
+  margin-bottom: 1rem;
+}
+
+.u-mb-md {
+  margin-bottom: 3rem;
+}
+
+.u-mb-4 {
+  margin-bottom: 4rem;
+}
+
+.u-mb-lg {
+  margin-bottom: 5rem;
+}
+
+.u-mb-xlg {
+  margin-bottom: 8rem;
+}
+
+.poor-story {
+  font-family: 'Poor Story', cursive;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+
+  @media only screen and (max-width: 37.5em) {
+    font-size: 42.5%;
+  }
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+  // border: 1px solid red;
+}
+
+body {
+  background-color: rgb(247, 235, 213);
+  font-family: 'Inconsolata', monospace;
+  font-size: 1.6rem;
+}
+
+.container {
+  background-color: wheat;
+  // border-left: 2px dashed orange;
+  // border-right: 2px dashed orange;
+  margin: 0 auto;
+  max-width: 90rem;
+  min-height: 100vh;
+  overflow: hidden;
+  padding-bottom: 5rem;
+  position: relative;
+}
+
+
+// ======================================  MAIN HEADING ======================================
+
+.heading-primary {
+  background-color: rgb(252, 206, 122);
+  color:rgb(29, 20, 3);
+  font-size: 2.5rem;
+  padding: 1vh 2vw;
+}

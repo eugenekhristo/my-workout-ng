@@ -1,0 +1,41 @@
+<div class="container">
+  <h2 class="heading-primary poor-story">
+    <a class="go-back" title="Go Back!" routerLink="/training/{{training.id}}">
+      &larr;
+    </a>
+    {{training.title}}
+  </h2>
+
+  <h3 class="u-mb-md">Statistics</h3>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Set</th>
+        <th>First</th>
+        <th>Best</th>
+        <th>Previous</th>
+        <th>Current</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of statistics.first.results; let i=index">
+        <td>{{i+1}}</td>
+        <td>{{item}}</td>
+        <td>{{statistics.best.results[i]}}</td>
+        <td>{{statistics.previous.results[i]}}</td>
+        <td>{{statistics.current.results[i]}}</td>
+      </tr>
+    </tbody>
+    <tfoot>
+      <tr>
+        <td>Total</td>
+        <td>{{calculateSummArr(statistics.first.results)}}</td>
+        <td>{{calculateSummArr(statistics.best.results)}}</td>
+        <td>{{calculateSummArr(statistics.previous.results)}}</td>
+        <td>{{calculateSummArr(statistics.current.results)}}</td>
+      </tr>
+    </tfoot>
+  </table>
+
+</div>

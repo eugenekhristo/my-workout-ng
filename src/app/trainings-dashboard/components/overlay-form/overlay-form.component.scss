@@ -1,0 +1,101 @@
+// ================================= OVERLAY ======================================
+
+.overlay {
+  align-items: center;
+  background-color: rgb(255, 219, 173);
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  left: 0;
+  position: fixed;
+  right: 0;
+  top: 0;
+  opacity: 0;
+  transition: 0.15s ease-in;
+  visibility: hidden;
+  z-index: 2;
+
+  &.open {
+    bottom: 0;
+    left: 0;
+    opacity: 1;
+    right: 0;
+    top: 0;
+    visibility: visible;
+  }
+
+  &__inner {
+    background-color: rgb(255, 242, 217);
+    border-radius: 5px;
+    max-width: 90rem;
+    opacity: 0;
+    padding: 2rem 3rem;
+    position: relative;
+    transform: scale(0);
+    transition: 0.15s ease-out 0.15s;
+    width: 80vw;
+  }
+
+  &.open &__inner {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  &__close {
+    cursor: pointer;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS',
+      sans-serif;
+    font-size: 2rem;
+    font-weight: 700;
+    position: absolute;
+    right: 1rem;
+    top: 1rem;
+  }
+
+  &__heading {
+    font-size: 2.5rem;
+    text-align: center;
+  }
+
+  &__form {
+    & input, textarea {
+      display: block;
+      background-color: rgb(255, 249, 235);
+      border: none;
+      font-family: inherit;
+      outline-color: orange;
+      padding: 1rem 2rem;
+      width: 100%;
+    }
+
+    textarea {
+      resize: vertical;
+    }
+
+    button {
+      background-color: wheat;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      display: block;
+      font-family: inherit;
+      font-size: 1.6rem;
+      font-weight: bold;
+      margin: 0 auto;
+      outline: none;
+      padding: 1rem 4rem;
+
+      &:disabled {
+        cursor: not-allowed
+      }
+    }
+  }
+
+  &__error {
+    color: orangered;
+    display: block;
+    font-size: 1.2rem;
+    margin: 1rem;
+    position: absolute;
+  }
+}

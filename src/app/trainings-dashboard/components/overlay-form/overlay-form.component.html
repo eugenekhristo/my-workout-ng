@@ -1,0 +1,63 @@
+<!-- ================ OVERLAY ================= -->
+<div
+  class="overlay"
+  [class.open]="overlayIsOpened"
+>
+  <div class="overlay__inner">
+    <span
+      class="overlay__close"
+      (click)="handleCloseOverlayForm(form)"
+    >
+      X
+    </span>
+    <h3 class="overlay__heading u-mb-md">Add Training</h3>
+
+    <form
+      class="overlay__form"
+      #form="ngForm"
+      (ngSubmit)="handleSubmitForm(form)"
+      novalidate
+    >
+
+      <div class="form-group u-mb-4">
+        <input
+          type="text"
+          placeholder="Title"
+          name="title"
+          required
+          minlength="3"
+          #titleInput="ngModel"
+          [(ngModel)]="title"
+        >
+          <span
+            class="overlay__error"
+            *ngIf="titleInput.errors?.required && titleInput.dirty"
+          >
+            Hey bro! This field must be filled in!
+          </span>
+
+          <span
+            class="overlay__error"
+            *ngIf="titleInput.errors?.minlength && titleInput.dirty"
+          >
+            Don't be too lazy! At least {{titleInput.errors?.minlength.requiredLength}} chars! You have only {{titleInput.errors?.minlength.actualLength}}...
+          </span>
+      </div>
+      <textarea
+        name="details"
+        placeholder="Description"
+        class="u-mb-md"
+        #descriptionInput="ngModel"
+        [(ngModel)]="details"
+      >
+      </textarea>
+      <button
+        type="submit"
+        [disabled]="form.invalid"
+      >
+        Add
+      </button>
+    </form>
+
+  </div>
+</div>

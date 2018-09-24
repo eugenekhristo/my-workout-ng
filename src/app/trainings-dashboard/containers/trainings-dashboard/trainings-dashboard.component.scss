@@ -1,0 +1,43 @@
+$black: rgb(29, 20, 3);
+
+
+// ======================================  HERO BTN ======================================
+
+.hero-btn {
+  background-color: orange;
+  bottom: 1vh;
+  display: inline-block;
+  clip-path: polygon(15% 0, 85% 0, 100% 15%, 50% 100%, 0 15%);
+  cursor: pointer;
+  color: #fff;
+  height: 6rem;
+  padding-top: 1.3rem;
+  position: fixed;
+  text-align: center;
+  text-transform: uppercase;
+  width: 9rem;
+  z-index: 1;
+}
+
+// ======================================  DEFAULT MESSAGE ======================================
+// if no any traininga added
+
+.default-message {
+  &__content {
+    left: 50%;
+    position: absolute;
+    text-align: center;
+    top: 45%;
+    transform: translate(-50%, -50%);
+  }
+
+  &__text {
+    font-size: 4rem;
+    white-space: nowrap;
+  }
+
+  &__emoji {
+    font-size: 5rem;
+  }
+}
+
